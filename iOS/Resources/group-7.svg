@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="91 604.414 58 58">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #ffc72c;
+      }
+    </style>
+  </defs>
+  <g id="group-7" transform="translate(-393 195.414)">
+    <rect id="rectangle-1" class="cls-1" width="58" height="58" rx="6" transform="translate(484 409)"/>
+    <g id="group" transform="translate(496 417.8)">
+      <path id="path" class="cls-2" d="M36,20V33.2A3.8,3.8,0,0,1,32.2,37H11.8A3.8,3.8,0,0,1,8,33.2V12.8A3.934,3.934,0,0,1,11.8,9H25a6.8,6.8,0,0,1,.2-2H12a5.893,5.893,0,0,0-6,6V33a5.893,5.893,0,0,0,6,6H32a5.893,5.893,0,0,0,6-6V19.6A5.917,5.917,0,0,1,36,20Z" transform="translate(-6 -1.8)"/>
+      <circle id="ellipse" class="cls-3" cx="7.6" cy="7.6" r="7.6" transform="translate(22 0)"/>
+    </g>
+  </g>
+</svg>
