@@ -26,7 +26,6 @@ namespace Bhasvic10th.iOS
 				cell = new UITableViewCell(UITableViewCellStyle.Default, cellidentifiers);
 			}
 			cell.TextLabel.Text = homeItemList.ElementAt(indexPath.Row).Name;
-			cell.TextLabel.LineBreakMode = UILineBreakMode.WordWrap;
 			cell.DetailTextLabel.Text = homeItemList.ElementAt(indexPath.Row).Category;
 			//categorisedItemList.ElementAt(indexPath.Row).Name
 			return cell;

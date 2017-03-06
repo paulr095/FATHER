@@ -36,7 +36,10 @@ namespace Bhasvic10th.iOS
 		static public void createNewsItemTable()
 		{
 			
+			
+			//db.DropTable<NewsItem>();
 			db.CreateTable<NewsItem>();
+			//db.DropTable
 			//return true;
 		}
 

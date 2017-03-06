@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using UIKit;
+using System.Globalization;
 
 namespace Bhasvic10th.iOS
 {
@@ -28,7 +29,16 @@ namespace Bhasvic10th.iOS
 				cell = new UITableViewCell(UITableViewCellStyle.Default, cellidentifier);
 			}
 			cell.TextLabel.Text = eventItemList.ElementAt(indexPath.Row).Name;
-			cell.DetailTextLabel.Text = eventItemList.ElementAt(indexPath.Row).DateOfEvent;
+			string dateString = eventItemList.ElementAt(indexPath.Row).DateOfEvent;
+			if (dateString == null)
+			{
+				cell.DetailTextLabel.Text = "no date";
+			}
+			else 
+			{
+				DateTime dt = DateTime.ParseExact(eventItemList.ElementAt(indexPath.Row).DateOfEvent, "yyyy-MM-ddTHH:mm:ss", CultureInfo.InvariantCulture);
+				cell.DetailTextLabel.Text = dt.ToLongDateString(); ;
+			}
 			return cell;
 		}
 

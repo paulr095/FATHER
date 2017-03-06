@@ -7,7 +7,7 @@ namespace Bhasvic10th.iOS
 {
 	public partial class HomeVC : UITableViewController
 	{
-		public string ChosenCat = "Geography A Level";
+		public string ChosenCat = "All";
 
 		public HomeVC(IntPtr handle) : base(handle)
 		{
@@ -44,6 +44,7 @@ namespace Bhasvic10th.iOS
 			_newsItemGrabber = new NewsItemGrabber();
 			LocalBhasvicDB.createNewsItemTable();
 			var jsonString = await _newsItemGrabber.getNews();
+			//while (jsonString == null ) {};
 			Console.WriteLine(jsonString);
 			LocalBhasvicDB.updateDBWithJSON(jsonString);
 			Console.WriteLine(LocalBhasvicDB.getItemList());
