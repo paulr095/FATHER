@@ -2,12 +2,14 @@ using Foundation;
 using System;
 using UIKit;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Bhasvic10th.iOS
 {
 	public partial class HomeVC : UITableViewController
 	{
 		public string ChosenCat = "All";
+		public string jsonString = "NotSet";
 
 		public HomeVC(IntPtr handle) : base(handle)
 		{
@@ -33,7 +35,7 @@ namespace Bhasvic10th.iOS
 			base.ViewWillAppear(animated);
 
 		}
-		public override async void ViewDidLoad()
+		public override void ViewDidLoad()
 		{
 
 
@@ -43,8 +45,12 @@ namespace Bhasvic10th.iOS
 			NewsItemGrabber _newsItemGrabber;
 			_newsItemGrabber = new NewsItemGrabber();
 			LocalBhasvicDB.createNewsItemTable();
-			var jsonString = await _newsItemGrabber.getNews();
-			//while (jsonString == null ) {};
+			//var jsonString = await _newsItemGrabber.getNews();
+			Task.Run(async () =>
+			{
+				jsonString = await _newsItemGrabber.getNews();
+			});
+			while (jsonString.Equals("NotSet")) {};
 			Console.WriteLine(jsonString);
 			LocalBhasvicDB.updateDBWithJSON(jsonString);
 			Console.WriteLine(LocalBhasvicDB.getItemList());

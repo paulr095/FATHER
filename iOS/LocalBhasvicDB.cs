@@ -37,7 +37,7 @@ namespace Bhasvic10th.iOS
 		{
 			
 			
-			//db.DropTable<NewsItem>();
+			db.DropTable<NewsItem>();
 			db.CreateTable<NewsItem>();
 			//db.DropTable
 			//return true;

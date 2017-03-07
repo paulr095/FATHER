@@ -29,7 +29,10 @@ namespace Bhasvic10th.iOS
 		public override void ViewWillDisappear(bool animated)
 		{
 			base.ViewWillDisappear(animated);
-			HomeVCDelegate.ChosenCat = ChosenCategories.categories[TableView.IndexPathForSelectedRow.Row];
+			if (TableView.IndexPathForSelectedRow != null)
+			{
+				HomeVCDelegate.ChosenCat = ChosenCategories.categories[TableView.IndexPathForSelectedRow.Row];
+			}
 		}
 
 		public void SelectCategory(HomeVC d)
